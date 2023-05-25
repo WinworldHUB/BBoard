@@ -32,9 +32,13 @@ const BBoard: React.FC<IBBoardProps> = (props) => {
         const queryResult = response.json();
         queryResult
           .then((data) => setBBData(data.value as BBItem[]))
-          .catch((error) => console.log(error));
+          .catch(() => {
+            // Error logging
+          });
       })
-      .catch((error) => console.log(error));
+      .catch(() => {
+        // Error logging
+       });
   };
 
   React.useEffect(() => {
@@ -43,7 +47,7 @@ const BBoard: React.FC<IBBoardProps> = (props) => {
 
   React.useEffect(() => {
     if (bbData) {
-      console.log(bbData);
+      // Logging received data
     }
   }, [bbData]);
 
